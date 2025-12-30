@@ -72,7 +72,7 @@ const LoginPage: React.FC<LoginProps> = ({ onLogin }) => {
         </form>
         
         <div className="bg-gray-50 px-8 py-4 border-t border-gray-100 text-center">
-          <p className="text-xs text-gray-500">© ২০২৪ অনলাইন এক্সাম পোর্টাল। সর্বস্বত্ব সংরক্ষিত।</p>
+          <p className="text-xs text-gray-500">© ২০২৫ সর্বস্বত্ব সংরক্ষিত।</p>
         </div>
       </div>
     </div>
