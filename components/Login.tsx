@@ -13,26 +13,44 @@ const LoginPage: React.FC<LoginProps> = ({ onLogin }) => {
   const [error, setError] = useState('');
   const [isLoggingIn, setIsLoggingIn] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsLoggingIn(true);
-    setError('');
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setIsLoggingIn(true);
+  //   setError('');
     
-    try {
-      const users = await db.getUsers();
-      const user = users.find(u => u.username === username && u.password === password);
+  //   try {
+  //     const users = await db.getUsers();
+  //     const user = users.find(u => u.username === username && u.password === password);
       
-      if (user) {
-        onLogin(user);
-      } else {
-        setError('ভুল আইডি অথবা পাসওয়ার্ড');
-      }
-    } catch (err) {
-      setError('সার্ভার ত্রুটি, আবার চেষ্টা করুন');
-    } finally {
-      setIsLoggingIn(false);
+  //     if (user) {
+  //       onLogin(user);
+  //     } else {
+  //       setError('ভুল আইডি অথবা পাসওয়ার্ড');
+  //     }
+  //   } catch (err) {
+  //     setError('সার্ভার ত্রুটি, আবার চেষ্টা করুন');
+  //   } finally {
+  //     setIsLoggingIn(false);
+  //   }
+  // };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsLoggingIn(true);
+  
+  try {
+    // Use the new specific login function
+    const user = await db.loginUser(username, password);
+    
+    if (user) {
+      onLogin(user);
+    } else {
+      setError('ভুল আইডি অথবা পাসওয়ার্ড');
     }
-  };
+  } catch (err) {
+     // ...
+  }
+}
 
   return (
     <div className="flex-1 flex items-center justify-center bg-[#f0f2f5] px-4">
@@ -86,7 +104,7 @@ const LoginPage: React.FC<LoginProps> = ({ onLogin }) => {
         </form>
         
         <div className="bg-gray-50 px-8 py-4 border-t border-gray-100 text-center">
-          <p className="text-xs text-gray-500">© ২০২৪ অনলাইন এক্সাম পোর্টাল। সর্বস্বত্ব সংরক্ষিত।</p>
+          <p className="text-xs text-gray-500">© ২০২৬ ONMOEON সর্বস্বত্ব সংরক্ষিত।</p>
         </div>
       </div>
     </div>

@@ -107,6 +107,7 @@ const App: React.FC = () => {
           user={auth.user} 
           questionSet={activeSet} 
           onFinish={finishQuiz} 
+          onLogout={handleLogout}
         />
       )}
 

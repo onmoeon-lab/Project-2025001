@@ -15,13 +15,8 @@ export interface Question {
   id: string;
   text: string;
   imageUrl?: string;
-  options: {
-    A: string;
-    B: string;
-    C: string;
-    D?: string;
-  };
-  correctOption: 'A' | 'B' | 'C' | 'D';
+  options: string[];
+  correctOption: string;
 }
 
 export interface QuestionSet {

@@ -25,7 +25,7 @@ const Instructions: React.FC<InstructionsProps> = ({ user, activeSet, onStart, o
 
   return (
     <div className="flex-1 flex flex-col items-center justify-start bg-[#dbdbdb] overflow-hidden">
-      <div className="w-full max-w-[1150px] flex-1 flex flex-col bg-white border-x border-gray-400 shadow-2xl overflow-hidden relative">
+      <div className="w-full max-w-[60vw] max-h-[93vh] flex-1 flex flex-col bg-white border-x border-gray-400 shadow-2xl overflow-hidden relative">
         
         {/* Dark Header */}
         <header className="bg-[#0e2a1e] text-white p-3 flex justify-between items-center shadow-md">
@@ -36,24 +36,22 @@ const Instructions: React.FC<InstructionsProps> = ({ user, activeSet, onStart, o
 
           <div className="flex items-center gap-8">
             <div className="flex items-center gap-2">
-               <div className="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center">
-                 <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                 </svg>
-               </div>
+               <svg className="w-8 h-8 inline" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" /></svg>
                <div className="flex flex-col">
                  <span className="text-[10px] opacity-70">পরিচিতির জন্য সময় অবশিষ্ট:</span>
                  <span className="text-xl font-mono font-bold leading-none text-yellow-400">{formatTime(timeLeft)}</span>
                </div>
             </div>
             
-            <div className="flex flex-col items-end gap-1">
-               <div className="flex items-center gap-2">
-                 <span className="text-[10px] opacity-70">অতিবাহিত ১%</span>
+            <div className="flex flex-col items-center gap-1">
+               
                  <div className="w-24 h-2 bg-gray-700 rounded-full overflow-hidden border border-gray-600">
                    <div className="h-full bg-green-500" style={{ width: `1%` }}></div>
                  </div>
-               </div>
+                 <div className="flex items-center gap-2">
+                 <span className="text-[10px] opacity-70">অতিবাহিত ১%</span>
+                 </div>
+               
             </div>
 
             <button 
@@ -94,11 +92,9 @@ const Instructions: React.FC<InstructionsProps> = ({ user, activeSet, onStart, o
           </div>
 
           {/* Scroll Hint */}
-          <div className="absolute bottom-6 right-12 bg-black text-white px-5 py-2.5 rounded-md shadow-2xl flex items-center gap-2 text-xs font-bold animate-bounce">
+          <div className="fixed bottom-[13vh] right-[20vw] bg-black text-white px-5 py-2.5 rounded-md shadow-lg flex items-center gap-2 text-xs font-bold animate-bounce cursor-default select-none z-10">
             <span>এই পৃষ্ঠাটির স্ক্রলিং প্রয়োজন</span>
-            <div className="w-4 h-4 rounded-full border border-white flex items-center justify-center">
-              <div className="w-1 h-2 bg-white rounded-full"></div>
-            </div>
+             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" /></svg>
           </div>
         </main>
 
