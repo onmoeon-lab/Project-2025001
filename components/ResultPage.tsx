@@ -25,7 +25,7 @@ const ResultPage: React.FC<ResultPageProps> = ({ onLogout }) => {
            </p>
         </div>
         
-        <div className="px-6 py-4 flex justify-between items-center border-t border-gray-100 bg-gray-50">
+        {/* <div className="px-6 py-4 flex justify-between items-center border-t border-gray-100 bg-gray-50">
            <button 
             onClick={onLogout}
             className="text-[#004d40] font-bold text-sm hover:underline"
@@ -33,7 +33,7 @@ const ResultPage: React.FC<ResultPageProps> = ({ onLogout }) => {
              প্রস্থান করুন
            </button>
            <span className="text-[10px] text-gray-400">Prometric</span>
-        </div>
+        </div> */}
       </div>
     </div>
   );
