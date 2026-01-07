@@ -78,11 +78,18 @@ const QuizInterface: React.FC<QuizInterfaceProps> = ({ user, questionSet, onFini
     };
   }, [currentIndex, showInstructions, questionSet]);
 
-  const formatTime = (seconds: number) => {
-    const h = Math.floor(seconds / 3600);
+  // const formatTime = (seconds: number) => {
+  //   const h = Math.floor(seconds / 3600);
+  //   const m = Math.floor((seconds % 3600) / 60);
+  //   const s = Math.max(0, seconds % 60);
+  //   return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+  // };
+
+    const formatTime = (seconds: number) => {
+    // const h = Math.floor(seconds / 3600);
     const m = Math.floor((seconds % 3600) / 60);
     const s = Math.max(0, seconds % 60);
-    return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+    return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
   };
 
   const handleOptionSelect = (optionKey: string) => {
@@ -132,7 +139,7 @@ const QuizInterface: React.FC<QuizInterfaceProps> = ({ user, questionSet, onFini
       <div className="w-full max-w-[60vw] max-h-[93vh] flex-1 flex flex-col bg-white border-x border-gray-400 shadow-2xl overflow-hidden relative">
 
         {/* Header */}
-        <header className="bg-[#0e2a1e] text-white p-3 flex justify-between items-center shadow-md">
+        <header className="bg-[#0e2a1e] text-white p-3 flex justify-between  shadow-md">
           <div className="flex flex-col">
             <span className="text-sm font-bold">পৃষ্ঠা: {showInstructions ? 'নির্দেশনা' : (isFinished ? 1 : currentIndex + 1)}</span>
             <span className="text-xs opacity-90">বিভাগ: {questionSet.category || 'পরিচিতি'}</span>
@@ -290,9 +297,11 @@ const QuizInterface: React.FC<QuizInterfaceProps> = ({ user, questionSet, onFini
                     </div>
 
                     {hasScroll && (
-                      <div className="fixed bottom-[13vh] right-[20vw] bg-black text-white px-5 py-2.5 rounded-md shadow-lg flex items-center gap-2 text-xs font-bold animate-bounce cursor-default select-none z-10">
+                      <div className="fixed bottom-[13vh] right-[20vw] bg-black text-white px-5 py-2.5 rounded-md shadow-lg flex items-center gap-2 text-xs font-semibold animate-bounce cursor-default select-none z-10">
                         <span>এই পৃষ্ঠাটির স্ক্রলিং প্রয়োজন</span>
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="size-4">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
                       </div>
                     )}
                   </div>
@@ -326,7 +335,7 @@ const QuizInterface: React.FC<QuizInterfaceProps> = ({ user, questionSet, onFini
                 if (currentIndex > 0) setCurrentIndex(prev => prev - 1);
               }}
               disabled={!showInstructions && currentIndex === 0}
-              className="flex items-center gap-2 px-8 py-1.5 bg-[#cbd5e0] hover:bg-gray-300 text-gray-900 rounded-md disabled:opacity-30 disabled:cursor-not-allowed font-bold text-sm"
+              className="flex items-center gap-2 px-8 py-1.5 bg-[#cbd5e0] hover:bg-gray-100 text-gray-900 rounded-md disabled:opacity-30 disabled:cursor-not-allowed font-bold text-sm"
             >
               &lt; ফেরত যান
             </button>
@@ -344,7 +353,7 @@ const QuizInterface: React.FC<QuizInterfaceProps> = ({ user, questionSet, onFini
                   }
                 }}
                 disabled={showInstructions}
-                className="flex items-center gap-2 px-8 py-1.5 bg-[#cbd5e0] hover:bg-gray-300 text-gray-900 disabled:opacity-30 disabled:cursor-not-allowed rounded-md font-bold text-sm"
+                className="flex items-center gap-2 px-8 py-1.5 bg-[#cbd5e0] hover:bg-gray-100 text-gray-900 disabled:opacity-30 disabled:cursor-not-allowed rounded-md font-bold text-sm"
               >
                 এগিয়ে যান &gt;
               </button>

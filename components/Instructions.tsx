@@ -63,23 +63,40 @@ const Instructions: React.FC<InstructionsProps> = ({ user, activeSet, onStart, o
           </div>
         </header>
 
-        {/* Sub Header */}
-        <div className="bg-[#f8f9fa] border-b px-4 py-1.5 text-[11px] font-bold text-gray-700 flex justify-between">
-          <span>পরীক্ষা: {activeSet?.title.split(' ')[0] || 'NUR'}</span>
-          <span>পরীক্ষার্থী: {user.name}</span>
+        {/* Info Bar */}
+        <div className="bg-[#f8f9fa] px-4 py-1.5 text-[11px] font-bold text-gray-800 border-b flex justify-between">
+          <div className="flex gap-1">
+            <span>পরীক্ষা:</span>
+            <span className="text-black font-extrabold uppercase"> {activeSet?.title.split(' ')[0] || 'Exam Name'}</span>
+          </div>
+          <div className="flex gap-1">
+            <span>পরীক্ষার্থী:</span>
+            <span className="text-black font-extrabold uppercase"> {user.name}</span>
+          </div>
         </div>
 
         {/* Instruction Content */}
-        <main className="flex-1 overflow-y-auto p-12 bg-white relative">
+        <main className="flex-1 overflow-y-auto p-10 bg-white relative">
           <div className="max-w-4xl mx-auto space-y-8">
             <div className="flex justify-start">
-              <svg className="w-20 h-20 text-black transform -rotate-90" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M16 5V11H21L12 21L3 11H8V5H16Z" />
+              <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 35 90 
+                          V 55 
+                          L 65 25 
+                          L 55 15 
+                          H 90 
+                          V 50 
+                          L 80 40 
+                          L 50 70 
+                          V 90 
+                          Z"
+                  fill="black" />
               </svg>
+
             </div>
 
-            <div className="space-y-6 text-gray-900 text-xl font-medium leading-relaxed">
-              <p className="font-bold text-2xl">সময় বাকি আছে,</p>
+            <div className="space-y-6 text-gray-900 text-lg font-medium leading-relaxed">
+              <p className="font-bold text-xl">সময় বাকি আছে,</p>
               <p className="flex items-center gap-2">
                 এই আইকন <svg className="w-6 h-6 inline" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" /></svg> কি পরিমান সময় বাকি আছে তা নির্দেশ করে। পরীক্ষা বিভাগের ৩০ মিনিটের একটি টাইমার রয়েছে।
               </p>
@@ -92,17 +109,21 @@ const Instructions: React.FC<InstructionsProps> = ({ user, activeSet, onStart, o
           </div>
 
           {/* Scroll Hint */}
-          <div className="fixed bottom-[13vh] right-[20vw] bg-black text-white px-5 py-2.5 rounded-md shadow-lg flex items-center gap-2 text-xs font-bold animate-bounce cursor-default select-none z-10">
+          <div className="fixed bottom-[13vh] right-[20vw] bg-black text-white px-5 py-2.5 rounded-md shadow-lg flex items-center gap-2 text-xs font-semibold animate-bounce cursor-default select-none z-10">
             <span>এই পৃষ্ঠাটির স্ক্রলিং প্রয়োজন</span>
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" /></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.0" stroke="currentColor" class="size-4">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+
+
           </div>
         </main>
 
         {/* Footer */}
-        <footer className="bg-[#0e2a1e] p-3 border-t border-teal-900 flex justify-end">
+        <footer className="bg-[#0e2a1e] p-3 flex justify-end gap-3 border-t border-teal-900">
           <button
             onClick={onStart}
-            className="bg-[#cbd5e0] hover:bg-gray-200 text-gray-900 px-10 py-2 rounded-md font-bold text-sm transition-colors flex items-center gap-2 shadow-inner"
+            className="flex items-center gap-2 px-8 py-1.5 bg-[#cbd5e0] hover:bg-gray-100 text-gray-900 disabled:opacity-30 disabled:cursor-not-allowed rounded-md font-bold text-sm"
           >
             পরীক্ষা শুরু করুন &gt;
           </button>
