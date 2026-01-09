@@ -161,7 +161,7 @@ const QuizInterface: React.FC<QuizInterfaceProps> = ({ user, questionSet, onFini
                 <div className="h-full bg-green-500 transition-all duration-300" style={{ width: `${isFinished ? 100 : progressPercent}%` }}></div>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-[10px] opacity-90">অতিবাহিত {isFinished ? '১০০' : progressPercent}%</span>
+                <span className="text-[11px] opacity-90">অতিবাহিত {isFinished ? '১০০' : progressPercent}%</span>
               </div>
             </div>
 
