@@ -107,7 +107,7 @@ const LoginPage: React.FC<LoginProps> = ({ onLogin }) => {
 
         <div className="bg-gray-50 px-8 py-4 border-t border-gray-100 text-center">
 
-          <p className="text-xs text-gray-200">v 1.1.9</p>
+          <p className="text-xs text-gray-200">v 1.2.0</p>
           <p className="text-xs text-gray-500">
             © {new Date().toLocaleString("bn-BD", { year: "numeric" })}{" "}
             <a
