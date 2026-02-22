@@ -1,11 +1,9 @@
-# ONMOEON - Online Exam Portal
-## Run Locally
+# ONMOEON - Online Exam System
+ONMOEON is an online examination system designed to provide a secure and efficient platform for conducting exams. It offers a user-friendly interface with features such as secure login, countdown timer, progress indicator, and support for multiple-choice questions (MCQs). The system is fully localized in Bangla, making it accessible to a wider audience.
+## 🚀 Features
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` in [.env.local](.env.local) to your Supabase credentials
-3. Run the app:
-   `npm run dev`
+- 🔐 Secure Login System  
+- ⏱ Countdown Timer for Exams  
+- 📊 Progress Indicator  
+- 🧠 MCQ Based Questions  
+- 🇧🇩 Full Bangla Interface  
