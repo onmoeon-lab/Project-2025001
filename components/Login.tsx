@@ -13,26 +13,6 @@ const LoginPage: React.FC<LoginProps> = ({ onLogin }) => {
   const [error, setError] = useState('');
   const [isLoggingIn, setIsLoggingIn] = useState(false);
 
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   setIsLoggingIn(true);
-  //   setError('');
-
-  //   try {
-  //     const users = await db.getUsers();
-  //     const user = users.find(u => u.username === username && u.password === password);
-
-  //     if (user) {
-  //       onLogin(user);
-  //     } else {
-  //       setError('ভুল আইডি অথবা পাসওয়ার্ড');
-  //     }
-  //   } catch (err) {
-  //     setError('সার্ভার ত্রুটি, আবার চেষ্টা করুন');
-  //   } finally {
-  //     setIsLoggingIn(false);
-  //   }
-  // };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -107,7 +87,7 @@ const LoginPage: React.FC<LoginProps> = ({ onLogin }) => {
 
         <div className="bg-gray-50 px-8 py-4 border-t border-gray-100 text-center">
 
-          <p className="text-xs text-gray-200">v 1.2.0</p>
+          <p className="text-xs text-gray-200">v 1.2.1</p>
           <p className="text-xs text-gray-500">
             © {new Date().toLocaleString("bn-BD", { year: "numeric" })}{" "}
             <a

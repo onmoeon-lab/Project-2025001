@@ -255,11 +255,11 @@ const QuizInterface: React.FC<QuizInterfaceProps> = ({ user, questionSet, onFini
                     <div className="grid grid-cols-2 justify-items-center gap-8 pt-2 p-8 max-w-[45vw] mx-auto">
 
                       <div className="border border-gray-300 p-2 rounded shadow-md bg-white">
-                        <img src="https://nur-svp.top/static/exam/images/lll.png" className="w-full h-auto" alt="Instruction step 1" />
+                        <img src="https://img.lightshot.app/JqP7M5mPRNOCRWPdPaQnPg.png" className="w-full h-auto" alt="Instruction step 1" />
                         {/* <p className="text-center text-xs mt-3 font-bold text-gray-600">বিবরণী নিশ্চিত করুন</p> */}
                       </div>
                       <div className="border border-gray-300 p-2 rounded shadow-md bg-white">
-                        <img src="https://nur-svp.top/static/exam/images/ll.png" className="w-full h-auto" alt="Instruction step 2" />
+                        <img src="https://img.lightshot.app/l1Hc8Qz4TP2ilNjtqkv7QQ.png" className="w-full h-auto" alt="Instruction step 2" />
                         {/* <p className="text-center text-xs mt-3 font-bold text-gray-600">চূড়ান্ত নিশ্চিতকরণ</p> */}
                       </div>
                     </div>
